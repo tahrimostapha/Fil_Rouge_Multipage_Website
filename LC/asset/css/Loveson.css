@@ -1,0 +1,9 @@
+.image img {
+    display: absolute;
+    height: auto;
+    width: 300%;
+}
+img {
+    height: auto;
+    max-width: 300%;
+}
