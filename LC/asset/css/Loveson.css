@@ -7,3 +7,7 @@ img {
     height: auto;
     max-width: 300%;
 }
+
+.removed{
+  display : none;
+}
