@@ -22,6 +22,8 @@ Les consignes sont regroupé dans [ce repo](https://github.com/becodeorg/lovelac
 |09/08/2018| **Objectif** : Déploiement du site web avec Heroku + Ajout des mentions GDPR| Heroku : Fait / GDPR : En attente|
 |10/08/2018| Fin du Challenge. <br> **Objectif** : Terminer le reste des implémentations, à savoir : <br> * Ajouter l'upload d'image à l'envoi de mail <br> * Ajouter la page form-log.php <br> * Rendre l'application PWA <br> * Améliorer le score sur le lighthouse | En attente|
 
+Vous pouvez également consulter le kanban juste [ici](https://github.com/tahrimostapha/multipage-website-in-php/projects/1).
+
 ## Librairies utilisées :
 * **CSS** : Bulma
 * **Mail** : PHPMailer
