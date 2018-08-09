@@ -1,4 +1,8 @@
-<?php include 'header.php';?>
+<?php
+require('../../vendor/autoload.php');
+include 'header.php'
+;?>
+
 <div class="column-right">
   <div class="menu-right">
     <!-- Notes : les liens ne mènent nullepart.  -->
