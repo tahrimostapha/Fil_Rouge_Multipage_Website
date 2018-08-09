@@ -2,5 +2,8 @@
     "require": {
         "monolog/monolog": "^1.23",
         "silex/silex": "^2.2"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
     }
 }
