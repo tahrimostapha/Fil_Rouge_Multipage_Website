@@ -1,14 +1,44 @@
 <?php require '../asset/header.php' ?>
 
+
+
 <?php 
 if (!empty($_POST)){
     
     $error = array();
-    
+
     if (empty($_POST['nom']) || !preg_match('/^[a-z0-9A-Z]/', $_POST['nom'])){
-        $error['nom'] = "votre pseudo n'est pas valide, entrez un pseudo contenant des chiffres ou/et des lettres";
+        $error['nom'] = "votre nom n'est pas valide, entrez un pseudo contenant des chiffres ou/et des lettres";
+    }
+    if (empty($_POST['prenom']) || !preg_match('/^[a-z0-9A-Z]/', $_POST['prenom'])){
+        $error['prenom'] = "votre prénom n'est pas valide, entrez un pseudo contenant des chiffres ou/et des lettres";
     }
 
+    if (empty($_POST['question'])) {
+        $error['question'] = 'Veuillez répondre a la question relative a la demande AWIP';
+    }
+// Spécification du chemin des images
+    $target_dir = "réceptionImg";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Spécification du chemin des images
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+        // Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Déso coco, t'as le choix entre jpg, png, jpeg & gif, choisis bien.";
+    $uploadOk = 0;
+}
+    }
     if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
     $error['email']= "Votre adresse mail n'est pas valide";
     }
@@ -16,7 +46,7 @@ if (!empty($_POST)){
 }
 ?>
 
-<form action="post_contact.php" method="POST">
+<form action="formulaire_de_reception.php" method="POST">
     <div class="columns">
         <div class="column is-two-fifths">
             <div class="field">
@@ -24,6 +54,17 @@ if (!empty($_POST)){
                 <div class="control">
                     <input class="input is-info is-rounded" name="nom" type="text" placeholder="Text input">
                 </div>
+                <label class="label">Votre prénom</label>
+                <div class="control">
+                    <input class="input is-info is-rounded" name="prenom" type="text" placeholder="Text input">
+                </div>
+
+                 <label class="label"> Veuillez sellectionner une photo d'identification/label>
+   
+    <input type="file" name="resume" id="fileToUpload">
+
+               
+
                 <label class="label">Email</label>
                 <div class="control has-icons-left has-icons-right">
                     <input class="input is-info is-rounded " type="email" name="email" placeholder="Email input" value="">
@@ -52,7 +93,7 @@ if (!empty($_POST)){
                 <div class="field">
                     <label class="label">votre année de naissance</label>
                     <div class="control">
-                        <div class="select">
+                        <div class="select" name='BornYear'>
                             <select>
                                 <option>1930</option>
                                 <option>1931</option>
