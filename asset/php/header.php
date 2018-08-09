@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/Loveson.css" rel="stylesheet">
+  <link href="./asset/css/bulma.min.css" rel="stylesheet">
+  <link href="./asset/css/Loveson.css" rel="stylesheet">
 </head>
 <body>
   <section class="hero is-primary">
