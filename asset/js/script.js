@@ -7,14 +7,14 @@ window.onload = function() {
   // index.php
   if(document.querySelector("#room-select")){
     method = "post";
-    action = "http://localhost/multipage-website-in-php/LC/asset/room.php";
+    action = "https://intense-shore-34534.herokuapp.com/asset/php/room.php";
     container = document.querySelector("#room-box");
     document.querySelector("#room-submit").addEventListener("click",dispatchForm);
   }
   // conseils.php
   if(document.querySelector("#table-link")){
     method = "get";
-    action = "http://localhost/multipage-website-in-php/LC/asset/detailed-conseils.php";
+    action = "https://intense-shore-34534.herokuapp.com/asset/php/detailed-conseils.php";
     container = document.querySelector("#detailed-link");
     for (var i = 0; i < document.querySelectorAll(".th3 a").length; i++) {
       document.querySelectorAll(".th3 a")[i].addEventListener("click",dispatchLink);
