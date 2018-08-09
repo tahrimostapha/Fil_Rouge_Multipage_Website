@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
 $content = "";
 $filled = true;
 if(isset($_GET['conseil'])){
@@ -99,7 +101,7 @@ if(isset($_GET['conseil'])){
             </p>
             <p>
 						<span>Sandra Schioppa : <a href='mailto:sandra.schioppa@solidaris.be'>sandra.schioppa@solidaris.be</a></span><br />
-						<span>Aleksandra Fivé : <a href='mailto:aleksandra.five@solidaris.be'>aleksandra.five@solidaris.be</a></span><br />          
+						<span>Aleksandra Fivé : <a href='mailto:aleksandra.five@solidaris.be'>aleksandra.five@solidaris.be</a></span><br />
             </p>";
     break;
 
