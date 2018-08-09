@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include './asset/php/header.php'; ?>
 <div>
     	<h1>Obtenir un conseil en aménagement</h1>
 				<p>Si vous avez des capacités restreintes par l’âge ou un handicap, la Plateforme Bien Vivre Chez Soi vous recommande de faire appel GRATUITEMENT à un service conseil en aménagement.</p>
@@ -50,6 +50,6 @@
     </div>
     <!-- Notes : C'est ici que s'affichent les infos lorsqu'on clique sur les liens. -->
     <div id="detailed-link">
-      <?php include('detailed-conseils.php'); ?>
+      <?php include './asset/php/detailed-conseils.php'; ?>
     </div>
-<?php include 'footer.php'; ?>
+<?php include './asset/php/footer.php'; ?>

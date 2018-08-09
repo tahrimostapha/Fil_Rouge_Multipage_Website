@@ -1,6 +1,6 @@
 <?php
-require('../../vendor/autoload.php');
-include 'header.php'
+require('../vendor/autoload.php');
+include './asset/php/header.php'
 ;?>
 
 <div class="column-right">
@@ -68,8 +68,8 @@ include 'header.php'
         </ul>
     </div>
     <div id="room-box">
-      <?php include 'room.php' ?>
+      <?php include './asset/php/room.php' ?>
     </div>
   </div>
 </div>
-<?php include 'footer.php'; ?>
+<?php include './asset/php/footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php require '../asset/header.php' ?>
+<?php require './asset/php/header.php' ?>
 <form action="" method="POST">
 <div class="field">
   <label class="label">Votre Nom</label>
@@ -136,4 +136,4 @@
           </div>
 </form>
 
-<?php require '../asset/footer.php' ?>
+<?php require './asset/php/footer.php' ?>
