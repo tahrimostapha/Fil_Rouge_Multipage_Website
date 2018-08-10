@@ -7,3 +7,6 @@ img {
     height: auto;
     max-width: 300%;
 }
+form{
+    padding-left: 2em;
+}

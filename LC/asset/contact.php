@@ -17,36 +17,24 @@ if (!empty($_POST)){
     if (empty($_POST['question'])) {
         $error['question'] = 'Veuillez répondre a la question relative a la demande AWIP';
     }
-// Spécification du chemin des images
-    $target_dir = "réceptionImg";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Spécification du chemin des images
-    if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-        // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Déso coco, t'as le choix entre jpg, png, jpeg & gif, choisis bien.";
-    $uploadOk = 0;
-}
+    if (empty($_POST['Frmtxtn'])) {
+        $error['question'] = 'Veuillez sellectionner un format de texte';
     }
     if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
     $error['email']= "Votre adresse mail n'est pas valide";
     }
+    if (empty($_POST['GDPR'])) {
+        $error['GDPR'] = 'Veuillez répondre cocher la mension gdpr';
+    }
     var_dump ($error);
 }
+//Récupération de l'image
+if(!empty($_FILES)){
+    $img=$_FILES['img'];
+    move_uploaded_file($img['tmp_name'],"image/".$img['name']);
+}
 ?>
-<div class="container is-fluid">
-    <form action="formulaire_de_reception.php" method="POST">
+    <form action="" method="POST">
         <div class="columns">
             <div class="column is-two-fifths">
                 <div class="field">
@@ -59,9 +47,10 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                         <input class="input is-info is-rounded" name="prenom" type="text" placeholder="Text input">
                     </div>
 
-                    <label class="label"> Veuillez sellectionner une photo d'identification/label>
-
-                        <input type="file" name="resume" id="fileToUpload">
+                    <label class="label"> Veuillez sellectionner une photo d'identification</label>
+                    <form method="post" action="index.php" enctype="multipart/form-data">
+                        <input type="file" name="img" id="fileToUpload"/>
+                      
 
 
 
@@ -77,6 +66,14 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                                 <div class="control">
                                     <textarea class="textarea" name="message" placeholder="Textarea"></textarea>
                                 </div>
+                                <div class="form-check form-check-inline">
+        <input class="control" type="radio" name="Frmtxt" id="html" value=".html">
+        <label class="radio" for="html">.html</label>
+      </div>
+      <div class="control">
+        <input class="form-check-input" type="radio" name="Frmtxt" id="txt" value=".txt">
+        <label class="radio" for="txt">.txt</label>
+      </div>
                             </div>
                         </div>
                         <p>Avez-vous déjà fait appel à l'AWIPH?</p>
@@ -192,10 +189,12 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                         </div>
                 </div>
                 <label class="checkbox">
-  <input type="checkbox">
-  En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la cadres des activités de la communauté française et conformément au  <a href=https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es> réglement général sur la protection des données </a>
+                    <input type="checkbox" name="GDPR"> En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre
+                    de la cadres des activités de la communauté française et conformément au
+                    <a href=https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es>
+                        réglement général sur la protection des données </a>
 
-</label>
+                </label>
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-link">Submit</button>
@@ -203,7 +202,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                 </div>
             </div>
         </div>
-</div>
-</form>
+
+    </form>
 
 <?php require '../asset/footer.php' ?>
