@@ -1,3 +1,4 @@
+<?php require '../asset/function.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,25 +7,18 @@
   <meta name="description" content="">
   <link href="./asset/css/bulma.min.css" rel="stylesheet">
   <link href="./asset/css/Loveson.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-</head>
-<body>
   <section class="hero is-primary">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-                Bien vivre chez soi
-            </h1>
+        <h1 class="title">Bien vivre chez soi</h1>
         <!-- Main container -->
         <nav class="level">
-
           <!--Left side-->
           <figure class="media-left">
             <p class="image is-64x64">
               <img src="../asset/image/logo.png">
             </p>
           </figure>
-
           <!-- Right side -->
           <div class="level-right">
             <p class="level-item">Liens utiles</p>
@@ -32,8 +26,6 @@
             <p class="level-item"><a>Drafts</a></p>
             <p class="level-item"><a>Deleted</a></p>
             <p class="level-item"><a class="button is-success">New</a></p>
-
-
             <div class="level-item">
               <div class="field has-addons">
                 <p class="control">
