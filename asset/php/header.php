@@ -6,6 +6,7 @@
   <meta name="description" content="">
   <link href="./asset/css/bulma.min.css" rel="stylesheet">
   <link href="./asset/css/Loveson.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
   <section class="hero is-primary">
     <div class="hero-body">
       <div class="container">
