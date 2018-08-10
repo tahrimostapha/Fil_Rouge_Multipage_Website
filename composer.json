@@ -1,6 +1,7 @@
 {
     "require": {
-        "silex/silex": "^2.2"
+        "silex/silex": "^2.2",
+        "phpmailer/phpmailer": "^6.0"
     },
     "require-dev": {
         "heroku/heroku-buildpack-php": "*"
