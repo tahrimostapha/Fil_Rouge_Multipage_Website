@@ -19,7 +19,7 @@ $mail->isSMTP();
 $mail->SMTPDebug = 2;
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
-$mail->Host = 'ssl://smtp.gmail.com:465';
+$mail->Host = 'smtp.gmail.com';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -30,13 +30,13 @@ $mail->SMTPSecure = 'ssl';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "tahri.mostapha.pro@gmail.com";
+$mail->Username = "test.4.smtp.heroku@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "Mo26486421";
+$mail->Password = "phpmailer";
 //Set who the message is to be sent from
-$mail->setFrom('tahri.mostapha.pro@gmail.com', 'First Last');
+$mail->setFrom('test.4.smtp.heroku@gmail.com', 'First Last');
 //Set an alternative reply-to address
-$mail->addReplyTo('tahri.mostapha.pro@gmail.com', 'First Last');
+$mail->addReplyTo('test.4.smtp.heroku@gmail.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress('tahri.mostapha.pro@gmail.com', 'John Doe');
 //Set the subject line
